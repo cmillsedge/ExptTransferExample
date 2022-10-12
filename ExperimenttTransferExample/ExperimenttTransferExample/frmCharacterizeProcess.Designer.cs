@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCharacterizeProcess));
             this.dgvParameters = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParameterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContextLabel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OutlineQueueName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +42,7 @@
             this.ParameterTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ParameterRoleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DisplayUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mandatory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParameters)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             this.dgvParameters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvParameters.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.Name,
+            this.ParameterName,
             this.Description,
             this.ContextLabel,
             this.OutlineQueueName,
@@ -62,7 +63,8 @@
             this.DataFormatName,
             this.ParameterTypeName,
             this.ParameterRoleName,
-            this.DisplayUnit});
+            this.DisplayUnit,
+            this.Mandatory});
             this.dgvParameters.Location = new System.Drawing.Point(12, 25);
             this.dgvParameters.Name = "dgvParameters";
             this.dgvParameters.Size = new System.Drawing.Size(1348, 488);
@@ -73,10 +75,10 @@
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             // 
-            // Name
+            // ParameterName
             // 
-            this.Name.HeaderText = "Name";
-            this.Name.Name = "Name";
+            this.ParameterName.HeaderText = "ParameterName";
+            this.ParameterName.Name = "ParameterName";
             // 
             // Description
             // 
@@ -128,6 +130,11 @@
             this.DisplayUnit.HeaderText = "DisplayUnit";
             this.DisplayUnit.Name = "DisplayUnit";
             // 
+            // Mandatory
+            // 
+            this.Mandatory.HeaderText = "Mandatory";
+            this.Mandatory.Name = "Mandatory";
+            // 
             // frmCharacterizeProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,7 +154,7 @@
 
         private System.Windows.Forms.DataGridView dgvParameters;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ParameterName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn ContextLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn OutlineQueueName;
@@ -158,5 +165,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ParameterTypeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ParameterRoleName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DisplayUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mandatory;
     }
 }

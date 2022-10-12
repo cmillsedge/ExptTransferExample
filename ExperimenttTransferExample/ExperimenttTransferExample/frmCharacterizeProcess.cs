@@ -24,7 +24,17 @@ namespace ExperimenttTransferExample
             _url = url;
             BioRailsProcessAPI processOps = new BioRailsProcessAPI(_session, _url);
             Process process = processOps.GetProcessByPath(task.ProcessPath);
+            ShowProcessParams(process);
+        }
+
+        private void ShowProcessParams(Process process)
+        {
+            DataTable dt = DataTableConverter.ParametersToDataTable(process.Parameters,dgvParameters.Columns);
+            dgvParameters.Columns.Clear();
+            dgvParameters.DataSource = dt;
             Console.WriteLine("BreakHere");
         }
+
+
     }
 }

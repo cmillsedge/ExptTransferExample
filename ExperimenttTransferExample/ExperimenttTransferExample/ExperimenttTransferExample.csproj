@@ -53,6 +53,7 @@
     <Compile Include="BioRailsQueryAPI.cs" />
     <Compile Include="BioRailsTaskAPI.cs" />
     <Compile Include="DataTableConverter.cs" />
+    <Compile Include="FileToTaskRowArray.cs" />
     <Compile Include="frmCharacterizeProcess.cs">
       <SubType>Form</SubType>
     </Compile>

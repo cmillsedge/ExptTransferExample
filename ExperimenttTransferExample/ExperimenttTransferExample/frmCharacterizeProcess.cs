@@ -35,6 +35,54 @@ namespace ExperimenttTransferExample
             Console.WriteLine("BreakHere");
         }
 
+        private void btnGetBasicData_Click(object sender, EventArgs e)
+        {
+            string myfile = SelectFile("C:\\");
+            lblDataFile.Text = myfile;
+        }
 
+        private void btnGetMSFile_Click(object sender, EventArgs e)
+        {
+            string myfile = SelectFile("C:\\");
+            lblMSFile.Text = myfile;
+        }
+
+        private void btnCreateNewTask_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private string SelectFile(string initialDirectory)
+        {
+            //simple method to open a file browse dialog restricted to Excel files for use with the import plate method 
+            //See supporting files folder in this project for the only supported file format. 
+            OpenFileDialog dialog = new OpenFileDialog();
+
+            try
+            {
+                //dialog.Filter = "Comma Seperated Files (*.csv)|*.csv|Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+                dialog.Filter = "New Excel(*.xlsx)|*.xlsx";
+                dialog.InitialDirectory = initialDirectory;
+                dialog.Title = "Select an Excel File ..";
+                dialog.FileName = "";
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+
+                    //sStartPath = System.IO.Path.GetDirectoryName(dialog.FileName);
+                    return (dialog.FileName);
+                }
+                else
+                {
+                    return (string.Empty);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+                return (string.Empty);
+            }
+
+        }
     }
 }

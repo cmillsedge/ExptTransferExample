@@ -43,6 +43,11 @@
             this.ParameterRoleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DisplayUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mandatory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGetBasicData = new System.Windows.Forms.Button();
+            this.btnGetMSFile = new System.Windows.Forms.Button();
+            this.btnCreateNewTask = new System.Windows.Forms.Button();
+            this.lblDataFile = new System.Windows.Forms.Label();
+            this.lblMSFile = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParameters)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +72,7 @@
             this.Mandatory});
             this.dgvParameters.Location = new System.Drawing.Point(12, 25);
             this.dgvParameters.Name = "dgvParameters";
-            this.dgvParameters.Size = new System.Drawing.Size(1348, 488);
+            this.dgvParameters.Size = new System.Drawing.Size(1348, 341);
             this.dgvParameters.TabIndex = 0;
             // 
             // Id
@@ -135,11 +140,64 @@
             this.Mandatory.HeaderText = "Mandatory";
             this.Mandatory.Name = "Mandatory";
             // 
+            // btnGetBasicData
+            // 
+            this.btnGetBasicData.Location = new System.Drawing.Point(12, 382);
+            this.btnGetBasicData.Name = "btnGetBasicData";
+            this.btnGetBasicData.Size = new System.Drawing.Size(173, 25);
+            this.btnGetBasicData.TabIndex = 1;
+            this.btnGetBasicData.Text = "Get Basic Task Info From File";
+            this.btnGetBasicData.UseVisualStyleBackColor = true;
+            this.btnGetBasicData.Click += new System.EventHandler(this.btnGetBasicData_Click);
+            // 
+            // btnGetMSFile
+            // 
+            this.btnGetMSFile.Location = new System.Drawing.Point(12, 413);
+            this.btnGetMSFile.Name = "btnGetMSFile";
+            this.btnGetMSFile.Size = new System.Drawing.Size(173, 23);
+            this.btnGetMSFile.TabIndex = 2;
+            this.btnGetMSFile.Text = "Get MS File";
+            this.btnGetMSFile.UseVisualStyleBackColor = true;
+            this.btnGetMSFile.Click += new System.EventHandler(this.btnGetMSFile_Click);
+            // 
+            // btnCreateNewTask
+            // 
+            this.btnCreateNewTask.Location = new System.Drawing.Point(12, 442);
+            this.btnCreateNewTask.Name = "btnCreateNewTask";
+            this.btnCreateNewTask.Size = new System.Drawing.Size(173, 23);
+            this.btnCreateNewTask.TabIndex = 3;
+            this.btnCreateNewTask.Text = "Create Task From Files";
+            this.btnCreateNewTask.UseVisualStyleBackColor = true;
+            this.btnCreateNewTask.Click += new System.EventHandler(this.btnCreateNewTask_Click);
+            // 
+            // lblDataFile
+            // 
+            this.lblDataFile.AutoSize = true;
+            this.lblDataFile.Location = new System.Drawing.Point(203, 388);
+            this.lblDataFile.Name = "lblDataFile";
+            this.lblDataFile.Size = new System.Drawing.Size(62, 13);
+            this.lblDataFile.TabIndex = 4;
+            this.lblDataFile.Text = "Select a file";
+            // 
+            // lblMSFile
+            // 
+            this.lblMSFile.AutoSize = true;
+            this.lblMSFile.Location = new System.Drawing.Point(203, 418);
+            this.lblMSFile.Name = "lblMSFile";
+            this.lblMSFile.Size = new System.Drawing.Size(62, 13);
+            this.lblMSFile.TabIndex = 5;
+            this.lblMSFile.Text = "Select a file";
+            // 
             // frmCharacterizeProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1378, 591);
+            this.Controls.Add(this.lblMSFile);
+            this.Controls.Add(this.lblDataFile);
+            this.Controls.Add(this.btnCreateNewTask);
+            this.Controls.Add(this.btnGetMSFile);
+            this.Controls.Add(this.btnGetBasicData);
             this.Controls.Add(this.dgvParameters);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCharacterizeProcess";
@@ -147,6 +205,7 @@
             this.Text = "Process Details";
             ((System.ComponentModel.ISupportInitialize)(this.dgvParameters)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -166,5 +225,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ParameterRoleName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DisplayUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mandatory;
+        private System.Windows.Forms.Button btnGetBasicData;
+        private System.Windows.Forms.Button btnGetMSFile;
+        private System.Windows.Forms.Button btnCreateNewTask;
+        private System.Windows.Forms.Label lblDataFile;
+        private System.Windows.Forms.Label lblMSFile;
     }
 }

@@ -35,7 +35,7 @@ namespace ExperimenttTransferExample
             }
             catch (Exception ex)
             {
-                return process;
+                throw ex;
             }
         }
     }

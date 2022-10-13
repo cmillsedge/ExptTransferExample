@@ -33,8 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BioRails.Core">
-      <HintPath>..\..\..\..\..\..\Desktop\Swagger\BioRailsCore\src\BioRails.Core\bin\Release\BioRails.Core.dll</HintPath>
+    <Reference Include="BioRails.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Desktop\Swagger\BioRailsCore\src\BioRails.Core\bin\Debug\BioRails.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BioRailsFoldersAPI.cs" />
+    <Compile Include="BioRailsJobHandler.cs" />
     <Compile Include="BioRailsProcessAPI.cs" />
     <Compile Include="BioRailsQueryAPI.cs" />
     <Compile Include="BioRailsTaskAPI.cs" />

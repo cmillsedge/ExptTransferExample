@@ -31,7 +31,35 @@ namespace ExperimenttTransferExample
             }
             catch (Exception ex)
             {
+                throw ex;
+            }
+        }
+
+        public BioRails.Core.Model.Task GetTaskNoRows(string path)
+        {
+            try
+            {
+                TasksApi tasksApi = new TasksApi(_url);
+                BioRails.Core.Model.Task task = tasksApi.TaskFind(_session.SessionId, path, true); //passing true to the last argument gives you the task without the task rows which is smaller
                 return task;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public JobReport CreateTask(BioRails.Core.Model.Task myTask)
+        {
+            try
+            {
+                TasksApi tasksApi = new TasksApi(_url);
+                JobReport job = tasksApi.TaskCreate(_session.SessionId, "All", myTask); //"All" is the team to create the task under
+                return job;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

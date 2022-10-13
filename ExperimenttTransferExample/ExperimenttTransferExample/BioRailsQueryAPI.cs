@@ -41,7 +41,7 @@ namespace ExperimenttTransferExample
             }
             catch (Exception ex)
             {
-                return queries;
+                throw ex;
             }
         }
         public QueryResults GetQueryResults(string queryId, int maxrows, int offset)
@@ -56,7 +56,7 @@ namespace ExperimenttTransferExample
             }
             catch (Exception ex)
             {
-                return results;
+                throw ex;
             }
         }
 
@@ -72,7 +72,7 @@ namespace ExperimenttTransferExample
             }
             catch (Exception ex)
             {
-                return results;
+                throw ex;
             }
         }
 
@@ -90,7 +90,7 @@ namespace ExperimenttTransferExample
             }
             catch (Exception ex)
             {
-                return columns;
+                throw ex;
             }
         }
     }

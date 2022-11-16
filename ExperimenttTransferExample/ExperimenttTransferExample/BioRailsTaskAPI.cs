@@ -62,5 +62,19 @@ namespace ExperimenttTransferExample
                 throw ex;
             }
         }
+
+        public JobReport EditTask(BioRails.Core.Model.Task myTask)
+        {
+            try
+            {
+                TasksApi tasksApi = new TasksApi(_url);
+                JobReport job = tasksApi.TaskEdit(_session.SessionId, myTask.Path, myTask); //"All" is the team to create the task under
+                return job;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

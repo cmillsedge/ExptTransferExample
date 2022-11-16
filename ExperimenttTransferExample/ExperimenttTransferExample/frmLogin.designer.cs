@@ -72,7 +72,7 @@ namespace ExperimenttTransferExample
             this.txtURL.Name = "txtURL";
             this.txtURL.Size = new System.Drawing.Size(296, 20);
             this.txtURL.TabIndex = 3;
-            this.txtURL.Text = "http://ia-demo-biorails-inv.instem.com/";
+            this.txtURL.Text = "http://192.168.0.150/";
             // 
             // txtUser
             // 

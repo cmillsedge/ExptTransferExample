@@ -52,17 +52,12 @@
   <ItemGroup>
     <Compile Include="BioRailsFoldersAPI.cs" />
     <Compile Include="BioRailsJobHandler.cs" />
+    <Compile Include="BioRailsOutlineAPI.cs" />
     <Compile Include="BioRailsProcessAPI.cs" />
     <Compile Include="BioRailsQueryAPI.cs" />
     <Compile Include="BioRailsTaskAPI.cs" />
     <Compile Include="DataTableConverter.cs" />
     <Compile Include="FileToTaskRowArray.cs" />
-    <Compile Include="frmCharacterizeProcess.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCharacterizeProcess.Designer.cs">
-      <DependentUpon>frmCharacterizeProcess.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,16 +70,33 @@
     <Compile Include="frmGetTasks.Designer.cs">
       <DependentUpon>frmGetTasks.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCreateTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreateTask.Designer.cs">
+      <DependentUpon>frmCreateTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModuleSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModuleSelect.Designer.cs">
+      <DependentUpon>frmModuleSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParameterComparer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmCharacterizeProcess.resx">
-      <DependentUpon>frmCharacterizeProcess.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="TaskEditor.cs" />
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGetTasks.resx">
       <DependentUpon>frmGetTasks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCreateTask.resx">
+      <DependentUpon>frmCreateTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModuleSelect.resx">
+      <DependentUpon>frmModuleSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,6 +106,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -107,6 +120,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\process_version.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\task.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

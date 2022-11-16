@@ -26,18 +26,17 @@ namespace ExperimenttTransferExample
             int i = 1;
             foreach (DataRow row in fileRows.Tables[0].Rows)
             {
+                Console.WriteLine("New File Row");
                 TaskRow rowTask = new TaskRow();
                 rowTask.Label = parameters.Rows[0]["ContextLabel"].ToString() + "." + i.ToString();
                 rowTask.Parent = null;
                 Dictionary<string, string> rowVals = new Dictionary<string, string>();
                 foreach (DataColumn col in fileRows.Tables[0].Columns)
-                { 
-                    foreach(DataRow paramNames in parameters.Rows)
+                {
+                    foreach (DataRow paramNames in parameters.Rows)
                     {
-                        if (col.ColumnName.ToLower() == paramNames["ParameterName"].ToString().ToLower() || paramNames["ParameterName"].ToString().ToLower() == col.ColumnName.ToLower())
+                        if (StringComparer.ParametersSame(col.ToString(), paramNames["ParameterName"].ToString()))
                         {
-                            string debug1 = col.ColumnName.ToLower();
-                            string debug2 = paramNames["ParameterName"].ToString().ToLower();
                             rowVals.Add(paramNames["ParameterName"].ToString(), row[col].ToString());
                         }
                     }  

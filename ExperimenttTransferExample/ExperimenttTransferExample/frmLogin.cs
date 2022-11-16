@@ -29,11 +29,11 @@ namespace ExperimenttTransferExample
                 SessionsApi s = new SessionsApi(url + "/api/v6");
                 Session key = s.Login(txtUser.Text, txtPass.Text);
                 Console.WriteLine(key.SessionId);
-                using (frmGetTasks frmGetTasks = new frmGetTasks(key, url + "/api/v6"))
+                using (frmModuleSelect frmModuleSelect = new frmModuleSelect(key, url + "/api/v6"))
                 {
-                    frmGetTasks.Location = this.Location;
+                    frmModuleSelect.Location = this.Location;
                     this.Hide();
-                    frmGetTasks.ShowDialog();
+                    frmModuleSelect.ShowDialog();
 
                 }
                 this.Show();

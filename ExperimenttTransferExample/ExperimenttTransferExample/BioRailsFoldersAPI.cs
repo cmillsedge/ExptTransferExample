@@ -23,6 +23,20 @@ namespace ExperimenttTransferExample
             _url = url;
         }
 
+        public FolderArray ListFolders(string path)
+        {
+            FolderArray folders = null;
+            try
+            {
+                FoldersApi foldersApi = new FoldersApi(_url);
+                folders = foldersApi.FolderList(_session.SessionId, path);
+                return folders;
+            }
+            catch (Exception ex)
+            {
+                return folders;
+            }
+        }
         public Folder CreateFolder(string path)
         {
             string folderName = "DataFiles";

@@ -38,5 +38,21 @@ namespace ExperimenttTransferExample
                 throw ex;
             }
         }
+
+        public FolderArray GetProcessByName(string name)
+        {
+
+            FolderArray processes = null;
+            try
+            {
+                OutlineProcessesApi processesApi = new OutlineProcessesApi(_url);
+                processes = processesApi.ProcessList(_session.SessionId, name);
+                return processes;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

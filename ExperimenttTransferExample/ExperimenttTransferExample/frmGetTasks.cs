@@ -48,23 +48,8 @@ namespace ExperimenttTransferExample
         private void btnGetTask_Click(object sender, EventArgs e)
         {
             string path = GetPathFromGridRow(dgvResults.SelectedRows);
-            if (path.Contains("Error"))
-            {
-                MessageBox.Show(path);
-            }
-            else
-            {
-                BioRailsTaskAPI taskOps = new BioRailsTaskAPI(_session, _url);
-                BioRails.Core.Model.Task task = taskOps.GetTaskByPath(path);
-                using (frmCharacterizeProcess frmCharacterizeProcess = new frmCharacterizeProcess(_session,_url,task))
-                {
-                    frmCharacterizeProcess.Location = this.Location;
-                    this.Hide();
-                    frmCharacterizeProcess.ShowDialog();
-
-                }
-                this.Show();
-            }
+            //Use path to get task object
+            //Send task back to LIMS
             
         }
 

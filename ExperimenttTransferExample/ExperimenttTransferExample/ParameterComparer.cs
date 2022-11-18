@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace ExperimenttTransferExample
 {
-    public static class StringComparer
+    public static class ParameterComparer
     {
+        //This method is simply being used to see if headers in the data file and process parameters are the same while excluding any units in the names
         public static bool ParametersSame(string fileParameter, string processParameter)
         {
             bool result = false;

@@ -21,9 +21,18 @@ namespace ExperimenttTransferExample
 
         public FolderArray GetAllOutlines()
         {
-            OutlinesApi outlinesApi = new OutlinesApi(_url);
-            FolderArray outlines = outlinesApi.OutlineList(_session.SessionId, "");
-            return outlines;
+            try
+            {
+                //instantiate an outlines API object
+                OutlinesApi outlinesApi = new OutlinesApi(_url);
+                //call the list method
+                FolderArray outlines = outlinesApi.OutlineList(_session.SessionId, "");
+                return outlines;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

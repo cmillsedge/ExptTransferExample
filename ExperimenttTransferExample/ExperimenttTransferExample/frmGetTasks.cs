@@ -29,13 +29,19 @@ namespace ExperimenttTransferExample
             try
             {
                 dgvResults.AllowUserToAddRows = true;
+                //instantiate a new query API object
                 BioRailsQueryAPI queryOps = new BioRailsQueryAPI(_session, _url);
-                NamedArray queries = queryOps.GetQueriesByFilter("PK_Results_Tasks");
+                //Return an array of query based on their names
+                NamedArray queries = queryOps.GetQueriesByFilter("Labsys Completed Tasks");
                 int maxrows = 100;
                 int offset = 0;
+                //Pull back the query columns to describe the data
                 QueryColumnArray columns = queryOps.GetQueryColumns(queries[0].Id);
+                //Pull back the query results
                 QueryResults results = queryOps.GetQueryResults(queries[0].Id, maxrows, offset);
+                //Convert the query results to a data table
                 DataTable dt = DataTableConverter.ResultsToDataTable(results, columns);
+                //Bind the data table to a datagridview
                 dgvResults.DataSource = dt;
                 dgvResults.AllowUserToAddRows = false;  
             }
@@ -47,13 +53,28 @@ namespace ExperimenttTransferExample
 
         private void btnGetTask_Click(object sender, EventArgs e)
         {
-            string path = GetPathFromGridRow(dgvResults.SelectedRows);
-            //Use path to get task object
-            //Send task back to LIMS
-            
+            string taskName = GetTaskPropertyFromGridRow(dgvResults.SelectedRows, "project_element_path");
+            try
+            {
+                using (frmTaskResults frmTaskResults = new frmTaskResults(_session, _url, taskName))
+                {
+                    frmTaskResults.Location = this.Location;
+                    this.Hide();
+                    frmTaskResults.ShowDialog();
+
+                }
+                this.Show();
+                //frmSel closed re-display logon;
+                //this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
-        private string GetPathFromGridRow(DataGridViewSelectedRowCollection drs)
+        private string GetTaskPropertyFromGridRow(DataGridViewSelectedRowCollection drs, string property)
         {
             string path = "";
             if (drs.Count == 0)
@@ -67,7 +88,8 @@ namespace ExperimenttTransferExample
             else //count is 1
             {
                 DataGridViewRow dr = drs[0];
-                path = dr.Cells["project_element_path"].Value.ToString();
+                //note the string "property" is the "Name" value of the query column and not the "Label" value of the query column
+                path = dr.Cells[property].Value.ToString();
             }
             return path;
 

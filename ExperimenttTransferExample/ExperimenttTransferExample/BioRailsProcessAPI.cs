@@ -23,14 +23,16 @@ namespace ExperimenttTransferExample
         {
         }
 
-        public Process GetProcessByPath(string path)
+        public Process GetProcessByName(string name)
         {
 
             Process process = null;
             try
             {
+                //instantiate a process API object
                 OutlineProcessesApi processesApi = new OutlineProcessesApi(_url);
-                process = processesApi.ProcessFind(_session.SessionId, path);
+                //use the ProcessFind method to get a process object by name
+                process = processesApi.ProcessFind(_session.SessionId, name);
                 return process;
             }
             catch (Exception ex)
@@ -39,14 +41,18 @@ namespace ExperimenttTransferExample
             }
         }
 
-        public FolderArray GetProcessByName(string name)
+        public FolderArray GetProcessByPath(string path)
         {
 
+            //instantiate folder array to hold processes
             FolderArray processes = null;
             try
             {
+                
+                //instantiate processAPI for process operations
                 OutlineProcessesApi processesApi = new OutlineProcessesApi(_url);
-                processes = processesApi.ProcessList(_session.SessionId, name);
+                //Call process list
+                processes = processesApi.ProcessList(_session.SessionId, path);
                 return processes;
             }
             catch (Exception ex)

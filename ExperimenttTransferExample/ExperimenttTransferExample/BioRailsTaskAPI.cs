@@ -22,10 +22,13 @@ namespace ExperimenttTransferExample
 
         public BioRails.Core.Model.Task GetTaskByPath(string path)
         {
+            //instantiate a new task
             BioRails.Core.Model.Task task = new BioRails.Core.Model.Task();
             try
             {
+                //instantiate a new API object
                 TasksApi tasksApi = new TasksApi(_url);
+                //Call the find method to get the 
                 task = tasksApi.TaskFind(_session.SessionId, path);
                 return task;
             }
@@ -39,7 +42,9 @@ namespace ExperimenttTransferExample
         {
             try
             {
+                //instantiate a new API object
                 TasksApi tasksApi = new TasksApi(_url);
+                //instantiate a task and populate it using the find method but return no row data
                 BioRails.Core.Model.Task task = tasksApi.TaskFind(_session.SessionId, path, true); //passing true to the last argument gives you the task without the task rows which is smaller
                 return task;
             }
@@ -53,7 +58,9 @@ namespace ExperimenttTransferExample
         {
             try
             {
+                //instantiate a new API object
                 TasksApi tasksApi = new TasksApi(_url);
+                //Call the task create method by passing a parent folder and a task object
                 JobReport job = tasksApi.TaskCreate(_session.SessionId, "All", myTask); //"All" is the team to create the task under
                 return job;
             }
@@ -67,7 +74,9 @@ namespace ExperimenttTransferExample
         {
             try
             {
+                //instantiate a new API object
                 TasksApi tasksApi = new TasksApi(_url);
+                //Call the task edit method by passing a parent folder and a task object
                 JobReport job = tasksApi.TaskEdit(_session.SessionId, myTask.Path, myTask); //"All" is the team to create the task under
                 return job;
             }

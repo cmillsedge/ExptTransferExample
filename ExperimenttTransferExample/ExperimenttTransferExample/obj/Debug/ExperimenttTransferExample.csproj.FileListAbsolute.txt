@@ -19,3 +19,4 @@ C:\Users\millsy\source\repos\CSharp\ExptTransferExample\ExperimenttTransferExamp
 C:\Users\millsy\source\repos\CSharp\ExptTransferExample\ExperimenttTransferExample\ExperimenttTransferExample\obj\Debug\ExperimenttTransferExample.pdb
 C:\Users\millsy\source\repos\CSharp\ExptTransferExample\ExperimenttTransferExample\ExperimenttTransferExample\obj\Debug\ExperimenttTransferExample.frmCreateTask.resources
 C:\Users\millsy\source\repos\CSharp\ExptTransferExample\ExperimenttTransferExample\ExperimenttTransferExample\obj\Debug\ExperimenttTransferExample.frmModuleSelect.resources
+C:\Users\millsy\source\repos\CSharp\ExptTransferExample\ExperimenttTransferExample\ExperimenttTransferExample\obj\Debug\ExperimenttTransferExample.frmTaskResults.resources

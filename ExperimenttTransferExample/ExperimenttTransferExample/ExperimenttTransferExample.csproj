@@ -82,6 +82,12 @@
     <Compile Include="frmModuleSelect.Designer.cs">
       <DependentUpon>frmModuleSelect.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTaskResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaskResults.Designer.cs">
+      <DependentUpon>frmTaskResults.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParameterComparer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmModuleSelect.resx">
       <DependentUpon>frmModuleSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaskResults.resx">
+      <DependentUpon>frmTaskResults.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

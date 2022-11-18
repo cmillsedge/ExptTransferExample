@@ -35,7 +35,7 @@ namespace ExperimenttTransferExample
                 {
                     foreach (DataRow paramNames in parameters.Rows)
                     {
-                        if (StringComparer.ParametersSame(col.ToString(), paramNames["ParameterName"].ToString()))
+                        if (ParameterComparer.ParametersSame(col.ToString(), paramNames["ParameterName"].ToString()))
                         {
                             rowVals.Add(paramNames["ParameterName"].ToString(), row[col].ToString());
                         }

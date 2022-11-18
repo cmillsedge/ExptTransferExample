@@ -34,7 +34,7 @@ namespace ExperimenttTransferExample
             }
             catch (Exception ex)
             {
-                return folders;
+                throw ex;
             }
         }
         public Folder CreateFolder(string path)
@@ -50,7 +50,7 @@ namespace ExperimenttTransferExample
             }
             catch (Exception ex)
             {
-                return folder;
+                throw ex;
             }
         }
 
@@ -75,7 +75,30 @@ namespace ExperimenttTransferExample
             }
             catch (Exception ex)
             {
-                return folder;
+                throw ex;
+            }
+        }
+
+        public FolderArray UpdateFolderState(string path, string stateName)
+        {
+            FolderArray result = null;
+            try
+            {
+                //instantiate a folder API object
+                FoldersApi foldersApi = new FoldersApi(_url);
+                //create a list of strings for the tasks (folders) to change the state for
+                List<string> paths = new List<string>();
+                //Add a single path to the list
+                paths.Add(path);
+                //Add the path array and a state name to a cart object
+                Cart cart = new Cart(paths,stateName);
+                //call the Folder state method passing in the cart object
+                result = foldersApi.FolderState(_session.SessionId, cart);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }
